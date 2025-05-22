@@ -124,7 +124,7 @@
 
 2. **Abstract Factory**: A creational design pattern that lets you produce families of related objects without specifying their concrete classes. Useful when you want to create a family of related objects - let's say all Apple devices (iPhone, iMac, Mac, iWatch) etc..
 
-    Example: I have an electronic device store and I sell goods like mobile, Laptops and PCs. Now there are variants for these devices, produced by `Microsoft`, `Apple` and `Samsung`. I need a way to create individual device object so that objects match if they are part of the same company. Customer's don't want to buy mismatching products from different companies, they are loyal to a single company. Now let's a new company called Google from california started producing all the above products. To accomodate this addition I would have to touch my existing code, same with a new product as well(Let's say a smart-watch).
+    Example: I have an electronic device store and I sell goods like mobile, Laptops and PCs. Now there are variants for these devices, produced by `Microsoft`, `Apple` and `Samsung`. I need a way to create individual device object so that objects match if they are part of the same company. Customer's don't want to buy mismatching products from different companies, they are loyal to a single company. Now let's a new company called Google from california started producing all the above products. To accomodate this addition I would have to touch my existing code, same with a new observableStock as well(Let's say a smart-watch).
 
     ```Java
     /** Example of a bad design using anti-pattern method*/
@@ -195,7 +195,7 @@
         void displayInfo();
     }
 
-    // Concrete implementations for each product from each manufacturer
+    // Concrete implementations for each observableStock from each manufacturer
     class AppleMobile implements Mobile {
         public void displayInfo() {
             System.out.println("Apple iPhone");
@@ -227,10 +227,10 @@
     ```
     Solution: Abstract factory solves this by creating - 
     
-    1. Abstract factory: Interface declaring methods to create objects for each product type
+    1. Abstract factory: Interface declaring methods to create objects for each observableStock type
     2. Concrete Factories: Implementation of abstract factory for each manufacturer.
-    3. Abstract Products: Interfaces for each type of product
-    4. Concrete Products: Specific implementation of each product for a manufacturer
+    3. Abstract Products: Interfaces for each type of observableStock
+    4. Concrete Products: Specific implementation of each observableStock for a manufacturer
 
     ```Java
     // code example
@@ -255,7 +255,7 @@
         Laptop createLaptop();
     }
 
-    // Concrete products implementing product interface
+    // Concrete products implementing observableStock interface
     class ApplePhone implements Mobile{
         public void displayInfo() {
             System.out.println("Apple iPhone");
@@ -352,7 +352,7 @@
 
     No design pattern is perfect for all situations. The Abstract Factory pattern works well when:
 
-    1. You have a relatively stable set of product types
+    1. You have a relatively stable set of observableStock types
     2. The number of manufacturers and products won't grow excessively.
     3. Family consistency is a critical requirement
 
@@ -432,7 +432,7 @@
 
     ```Java
 
-    // Creating product class
+    // Creating observableStock class
     public class Burrito{
         // final immutable fields
         private final String tortilla;
